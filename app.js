@@ -9,6 +9,7 @@ const state = {
   quality: "全部",
   itemType: "全部",
   sourceType: "全部",
+  setOnly: false,
   mapFilter: "all",
   selectedMarkerKey: "",
   focusedMarkerKey: "",
@@ -20,6 +21,7 @@ let detailHistory = [];
 const navItems = [
   ["heroes", "英雄", "英", "heroes"],
   ["items", "物品", "物", "items"],
+  ["sets", "套装", "套", "itemSets"],
   ["map", "地图", "图", "placements"],
   ["yaoyang", "幺阳", "阵", "yaoyangLayers"],
   ["bosses", "Boss", "首", "bosses"],
@@ -31,6 +33,7 @@ const navItems = [
 
 const titleMap = Object.fromEntries(navItems.map(([id, label]) => [id, label]));
 const itemByKey = new Map(DATA.items.map((item) => [item.key, item]));
+const setById = new Map((DATA.itemSets || []).map((itemSet) => [itemSet.id, itemSet]));
 const rawItemById = new Map((DATA.raw?.items || []).map((item) => [item.id, item]));
 const itemGroupByRawId = new Map();
 DATA.items.forEach((item) => {
@@ -717,20 +720,99 @@ function itemSourceText(item) {
   return structuredItemSources(item).slice(0, 3).map(itemSourceSummary).join(" / ");
 }
 
+function itemSetFor(item) {
+  return item?.setId ? setById.get(item.setId) : null;
+}
+
+function renderSetBonuses(itemSet) {
+  const bonuses = itemSet?.bonuses || [];
+  return `
+    <div class="stats-list set-bonus-list">
+      ${bonuses.map((bonus) => `<span class="pill">${esc(bonus)}</span>`).join("") || `<span class="muted">未解析到套装属性</span>`}
+    </div>
+  `;
+}
+
+function renderSetMembers(itemSet, currentKey = "") {
+  const members = itemSet?.members || [];
+  return `
+    <div class="mini-list set-member-list">
+      ${members.map((member) => itemButton(member, member.key === currentKey ? `data-current-set-member="true"` : "")).join("")}
+    </div>
+  `;
+}
+
+function renderItemSetSection(item) {
+  const itemSet = itemSetFor(item);
+  if (!itemSet) return "";
+  return `
+    <h3>套装</h3>
+    <div class="set-detail-card">
+      <div class="set-detail-head">
+        <div>
+          <strong>${esc(itemSet.name)}套</strong>
+          <span class="muted">${esc(itemSet.memberCount)} 件激活</span>
+        </div>
+        <span class="pill ${qualityClass(itemSet.quality)}">${esc(itemSet.quality)}</span>
+      </div>
+      <h4>套装成员</h4>
+      ${renderSetMembers(itemSet, item.key)}
+      <h4>套装属性</h4>
+      ${renderSetBonuses(itemSet)}
+    </div>
+  `;
+}
+
+function renderSets() {
+  const allSets = DATA.itemSets || [];
+  const sets = allSets.filter((itemSet) => includesQuery(itemSet, ["name", "quality", "members", "bonuses"]));
+  return `
+    <div class="toolbar">
+      <span class="pill">套装 ${sets.length} / ${allSets.length}</span>
+      <button class="chip" data-view-jump="items">回到物品</button>
+    </div>
+    <div class="set-grid">
+      ${sets.map((itemSet) => `
+        <article class="set-card">
+          <header>
+            <div class="set-icon-stack">
+              ${(itemSet.members || []).slice(0, 4).map((member) => icon(member.icon, member.name, "mini-icon")).join("")}
+            </div>
+            <div>
+              <h2>${esc(itemSet.name)}套</h2>
+              <div class="meta-line compact">
+                <span class="pill ${qualityClass(itemSet.quality)}">${esc(itemSet.quality)}</span>
+                <span class="pill">${esc(itemSet.memberCount)} 件激活</span>
+                <span class="pill">${esc(itemSet.source || "套装触发器")}</span>
+              </div>
+            </div>
+          </header>
+          <h3>套装成员</h3>
+          ${renderSetMembers(itemSet)}
+          <h3>套装属性</h3>
+          ${renderSetBonuses(itemSet)}
+        </article>
+      `).join("") || empty("没有匹配的套装")}
+    </div>
+  `;
+}
+
 function renderItems() {
   const qualities = ["全部", ...qualityOrder.filter((q) => DATA.meta.qualityCounts[q])];
   const types = ["全部", ...Array.from(new Set(DATA.items.map((i) => i.type || "未分类"))).sort()];
   const sourceTypes = ["全部", ...Array.from(new Set(DATA.items.flatMap((i) => (i.sources || []).map((s) => s.type)))).sort()];
   const items = DATA.items.filter((item) => {
+    if (state.setOnly && !item.setId) return false;
     if (state.quality !== "全部" && item.quality !== state.quality) return false;
     if (state.itemType !== "全部" && item.type !== state.itemType) return false;
     if (state.sourceType !== "全部" && !(item.sources || []).some((s) => s.type === state.sourceType)) return false;
-    return includesQuery(item, ["name", "type", "quality", "description", "stats", "sources", "recipes"]);
+    return includesQuery(item, ["name", "type", "quality", "description", "stats", "sources", "recipes", "setName"]);
   });
 
   return `
     <div class="toolbar">
       ${qualities.map((q) => chip(q, state.quality === q, `data-quality="${esc(q)}"`)).join("")}
+      ${chip("套装", state.setOnly, `data-set-only="${state.setOnly ? "0" : "1"}"`)}
       <select id="itemType">${types.map((type) => `<option ${state.itemType === type ? "selected" : ""}>${esc(type)}</option>`).join("")}</select>
       <select id="sourceType">${sourceTypes.map((type) => `<option ${state.sourceType === type ? "selected" : ""}>${esc(type)}</option>`).join("")}</select>
       <span class="pill">显示 ${items.length} / ${DATA.items.length}</span>
@@ -752,6 +834,7 @@ function renderItems() {
           <div class="stats-list">
             ${(item.stats || []).slice(0, 5).map((stat) => `<span class="pill">${esc(stat)}</span>`).join("") || `<span class="muted">未解析到数值属性</span>`}
           </div>
+          ${item.setName ? `<span class="pill set-badge">${esc(item.setName)}套 · ${esc(item.setMemberCount || "")}件</span>` : ""}
           <p class="copy">${esc(itemSourceText(item) || "来源数据为空")}</p>
           ${craftCount ? `<span class="pill">合成/兑换 ${craftCount}</span>` : ""}
           ${upgradeCount ? `<span class="pill">升级/强化 ${upgradeCount}</span>` : ""}
@@ -1665,6 +1748,7 @@ function renderVariantDetailPanel(raw) {
         ${group ? `
           <h3>同名装备</h3>
           <div class="mini-list">${itemButton(group)}</div>
+          ${renderItemSetSection(group)}
         ` : ""}
         <h3>来源</h3>
         ${renderVariantSources(raw)}
@@ -1763,6 +1847,7 @@ function renderDetail(type, key, options = {}) {
         <h3>属性</h3>
         <div class="stats-list">${(item.stats || []).map((stat) => `<span class="pill">${esc(stat)}</span>`).join("") || `<span class="muted">没有解析到数值属性</span>`}</div>
         ${item.description ? `<p class="copy">${esc(item.description)}</p>` : ""}
+        ${renderItemSetSection(item)}
         <h3>来源</h3>
         ${renderItemSources(item)}
         ${renderCraftRelations(item)}
@@ -1783,6 +1868,12 @@ function bindDynamicControls(root = document) {
   root.querySelectorAll("[data-quality]").forEach((button) => {
     button.addEventListener("click", () => {
       state.quality = button.dataset.quality;
+      render();
+    });
+  });
+  root.querySelectorAll("[data-set-only]").forEach((button) => {
+    button.addEventListener("click", () => {
+      state.setOnly = button.dataset.setOnly === "1";
       render();
     });
   });
@@ -1871,6 +1962,7 @@ function render() {
   const renderers = {
     heroes: renderHeroes,
     items: renderItems,
+    sets: renderSets,
     map: renderMap,
     yaoyang: renderYaoyang,
     bosses: renderBosses,

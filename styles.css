@@ -284,7 +284,8 @@ h3 {
 .item-card,
 .boss-card,
 .drop-stage-card,
-.scroll-card {
+.scroll-card,
+.set-card {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--panel);
@@ -746,14 +747,16 @@ h3 {
 .task-card,
 .shop-card,
 .item-card,
-.boss-card {
+.boss-card,
+.set-card {
   padding: 15px;
 }
 
 .entity-card header,
 .item-card header,
 .boss-card header,
-.shop-card header {
+.shop-card header,
+.set-card header {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -846,14 +849,16 @@ h3 {
 .item-card,
 .boss-card,
 .shop-card,
-.index-card {
+.index-card,
+.set-card {
   transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
 }
 
 .item-card:hover,
 .boss-card:hover,
 .shop-card:hover,
-.index-card:hover {
+.index-card:hover,
+.set-card:hover {
   border-color: rgba(22, 116, 95, 0.45);
   transform: translateY(-1px);
   box-shadow: 0 12px 30px rgba(39, 48, 42, 0.1);
@@ -887,6 +892,84 @@ h3 {
   margin: 12px 0 0;
   color: var(--muted);
   font-size: 13px;
+}
+
+.set-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 14px;
+}
+
+.set-card {
+  display: grid;
+  gap: 12px;
+}
+
+.set-card h2,
+.set-card h3 {
+  margin: 0;
+}
+
+.set-icon-stack {
+  display: grid;
+  grid-template-columns: repeat(2, 28px);
+  gap: 4px;
+  padding: 6px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f4f7f2;
+}
+
+.set-detail-card {
+  display: grid;
+  gap: 10px;
+  margin-top: 8px;
+  padding: 12px;
+  border: 1px solid rgba(22, 116, 95, 0.24);
+  border-radius: 8px;
+  background: #f7fbf8;
+}
+
+.set-detail-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.set-detail-head strong,
+.set-detail-head span {
+  display: block;
+}
+
+.set-detail-card h4 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.set-bonus-list {
+  margin-top: 0;
+}
+
+.set-bonus-list .pill {
+  border-color: rgba(22, 116, 95, 0.22);
+  background: #fff;
+  font-weight: 700;
+}
+
+.set-badge {
+  width: fit-content;
+  margin-top: 10px;
+  border-color: rgba(185, 120, 22, 0.34);
+  background: #fff8e8;
+  color: #67410d;
+  font-weight: 700;
+}
+
+.set-member-list .mini-object[data-current-set-member="true"] {
+  border-color: var(--jade);
+  background: #edf8f4;
+  box-shadow: inset 0 0 0 1px rgba(22, 116, 95, 0.18);
 }
 
 .craft-relation-grid {
@@ -1719,6 +1802,10 @@ th {
 
   .hero-stat-row {
     gap: 6px;
+  }
+
+  .set-grid {
+    grid-template-columns: 1fr;
   }
 
   .source-card {
