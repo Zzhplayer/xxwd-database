@@ -22,6 +22,7 @@ const navItems = [
   ["heroes", "英雄", "英", "heroes"],
   ["items", "物品", "物", "items"],
   ["sets", "套装", "套", "itemSets"],
+  ["guides", "攻略", "攻", ""],
   ["map", "地图", "图", "placements"],
   ["yaoyang", "幺阳", "阵", "yaoyangLayers"],
   ["bosses", "Boss", "首", "bosses"],
@@ -32,6 +33,322 @@ const navItems = [
 ];
 
 const titleMap = Object.fromEntries(navItems.map(([id, label]) => [id, label]));
+const GUIDE_DATA = {
+  updatedAt: "2026-06-08",
+  sources: [
+    {
+      id: "jdrts-builds",
+      site: "JDRTS",
+      type: "加点路线",
+      title: "《逆天问道》总结的加点路数",
+      url: "https://jdrts.com/16588",
+      note: "覆盖问剑、云素青、瑜、望缺、藏劫如来、燕落、萧梦寻等英雄的路线号与后期装备方向。",
+    },
+    {
+      id: "jdrts-hero-read",
+      site: "JDRTS",
+      type: "英雄理解",
+      title: "《逆天问道》发点个人对英雄的理解",
+      url: "https://jdrts.com/16523",
+      note: "偏玩家体感，适合判断英雄定位、装备依赖和上手难度。",
+    },
+    {
+      id: "jdrts-doufo",
+      site: "JDRTS",
+      type: "专门攻略",
+      title: "玩家自发性斗佛攻略心得",
+      url: "https://jdrts.com/16466-2",
+      note: "斗佛开局节奏、装备取舍、单通思路和抗压定位。",
+    },
+    {
+      id: "jdrts-attack",
+      site: "JDRTS",
+      type: "机制攻略",
+      title: "普通攻击详解全攻略",
+      url: "https://jdrts.com/16427-2",
+      note: "解释普通攻击、距离、会心提元、分裂、破月生命差伤害等机制。",
+    },
+    {
+      id: "jdrts-flow",
+      site: "JDRTS",
+      type: "通关流程",
+      title: "第一次通关体验局流程攻略",
+      url: "https://jdrts.com/16401-2",
+      note: "从开局任务、前期装备、FB1/FB2到终局流程的玩家经验。",
+    },
+    {
+      id: "jdrts-tianyin",
+      site: "JDRTS",
+      type: "技能测试",
+      title: "天音技能加点输出测试",
+      url: "https://jdrts.com/17243",
+      note: "旧版本测试资料，但对天音地雷、禁断、八斩风路线仍有参考价值。",
+    },
+    {
+      id: "pc0359-31",
+      site: "河东下载站",
+      type: "英雄装备攻略",
+      title: "逆天问道3.1闲竹4.55版英雄加点装备攻略",
+      url: "https://www.pc0359.cn/downinfo/53223.html",
+      note: "包含青麈、燕落、执刑仙、破月、斗佛、鱼湘等英雄路线和新手流程。",
+    },
+    {
+      id: "cncrk-31",
+      site: "起点软件园",
+      type: "地图系统说明",
+      title: "逆天问道3.1含攻略正式版",
+      url: "https://www.cncrk.com/downinfo/160384.html",
+      note: "解释四次三选一职业系统、装备星级、成长武器、套装和基础属性。",
+    },
+    {
+      id: "bili-wenjian-xiaokui",
+      site: "哔哩哔哩",
+      type: "教学视频",
+      title: "逆天问道3.3.4和3.3.2问剑及小葵教学",
+      url: "https://www.bilibili.com/video/BV1Qs4y1a74P/",
+      note: "面向问剑、小葵的版本教学视频。",
+    },
+    {
+      id: "bili-yumei",
+      site: "哔哩哔哩",
+      type: "通关录像",
+      title: "逆天问道3.3.2 N8鱼妹单通完整攻略通关录像",
+      url: "https://www.bilibili.com/video/BV1u8411T7Z3/",
+      note: "鱼妹单通完整流程录像，适合观察走位、发育节奏和装备过渡。",
+    },
+    {
+      id: "bili-youshen",
+      site: "哔哩哔哩",
+      type: "系列视频",
+      title: "逆天问道3.32殁佛模式斗佛流程及关联视频",
+      url: "https://www.bilibili.com/video/BV1Nz421a7Tr/",
+      note: "同作者关联列表包含新手任务、斗佛、小葵、破月、玄虚、青麈等高难视频。",
+    },
+    {
+      id: "bili-heshang",
+      site: "哔哩哔哩",
+      type: "教学视频",
+      title: "逆天问道3.3.2 和尚：教学",
+      url: "https://www.bilibili.com/video/BV1GV41117VQ/",
+      note: "和尚/斗佛向教学视频。",
+    },
+  ],
+  general: [
+    {
+      title: "通用开局与流程",
+      sourceIds: ["jdrts-flow", "pc0359-31", "cncrk-31"],
+      summary: "多数攻略都把前期任务、成长武器、蜘蛛/狼/草药、熊洞与鱼谷作为节奏核心。新手可以先按通用流程熟悉地图，再按英雄路线微调。",
+      points: [
+        "开局任务链优先保证等级、钱和早期装备，成长武器与衣服过渡比盲目刷高级副本更稳定。",
+        "鱼谷、熊洞、幺阳、精魄、四象玉等节点会影响后续能否按时进 A/S 级装备节奏。",
+        "高难单通通常需要停怪窗口规划，任务、守家、转生和刷 Boss 不能互相挤占太多时间。",
+      ],
+    },
+    {
+      title: "基础机制：普通攻击、分裂、会心提元",
+      sourceIds: ["jdrts-attack", "cncrk-31"],
+      summary: "普通攻击并不是普通白字，筋骨、物理攻击、会心、提元、距离、分裂和部分技能都会改写实际输出。",
+      points: [
+        "远程英雄尤其要关注距离收益；瑜和萧梦寻的弓系/远程输出会被站位影响。",
+        "会心决定触发概率，提元决定爆发倍率；只堆攻击而忽略会心提元，后期输出会明显变钝。",
+        "分裂伤害可吃多种加成，清怪和多目标 Boss 场景价值很高。",
+      ],
+    },
+  ],
+  heroes: [
+    {
+      hero: "问剑",
+      aliases: ["弈剑", "内剑"],
+      role: "全面剑系，可走战系、法系或心剑操作流。",
+      entries: [
+        {
+          title: "路线参考",
+          sourceIds: ["jdrts-builds"],
+          summary: "玩家路线把问剑分成战系多通、战系单通和法系飞仙流几类。飞仙流操作要求高，更适合熟悉地图后尝试。",
+          points: ["战系多通可参考 1111。", "战系单通可参考 1311。", "法系可参考 3223 或 3233，3233偏操作。"],
+        },
+        {
+          title: "英雄理解",
+          sourceIds: ["jdrts-hero-read", "bili-wenjian-xiaokui"],
+          summary: "外部玩家普遍把问剑视为上手容易、发育简单、爆发全面的中流砥柱型英雄。",
+          points: ["优点是流派多、适配面广。", "缺点是高操作流派需要清楚技能联动，不适合只按单一技能循环打。"],
+        },
+      ],
+    },
+    {
+      hero: "萧梦寻",
+      aliases: ["法魂", "法MM"],
+      role: "远程法魂，反伤、暴力和主动路线都可玩。",
+      entries: [
+        {
+          title: "路线参考",
+          sourceIds: ["jdrts-builds", "jdrts-hero-read"],
+          summary: "法魂常见路线有反伤流、暴力流和主动流。老攻略里新手更偏向反伤路线，熟练后可追求更高输出。",
+          points: ["反伤流可参考 2232。", "暴力流可参考 2212。", "主动流可参考 1212。"],
+        },
+        {
+          title: "输出机制",
+          sourceIds: ["jdrts-attack"],
+          summary: "法魂的远程攻击与距离、火魂、分裂等机制相关。拿弓或分裂装时，要注意不是所有加成都按同一方式继承。",
+          points: ["距离对远程威力有影响，但法魂射程较短，需要实际站位验证。", "仙疗咒与火魂、分裂之间的继承关系会影响装备选择。"],
+        },
+      ],
+    },
+    {
+      hero: "望缺",
+      aliases: ["破月", "忘缺"],
+      role: "高爆发物理输出，装备依赖明显。",
+      entries: [
+        {
+          title: "路线参考",
+          sourceIds: ["jdrts-builds", "pc0359-31"],
+          summary: "破月常见方向是生存流或极限输出流。极限路线容错低，但装备到位后 Boss 输出很亮眼。",
+          points: ["生存流可参考 2233。", "极限流可参考 2212 或 2232。", "高难打鸠罗时要把吸血、会心、提元和保命窗口一起算。"],
+        },
+        {
+          title: "机制提醒",
+          sourceIds: ["jdrts-attack", "jdrts-hero-read"],
+          summary: "破月的核心特色是低血量相关的伤害放大，因此它很强，也更怕装备、操作或节奏断档。",
+          points: ["输出和当前生命比例关联，低血爆发不等于无脑卖血。", "外部玩家评价破月吃装备，没装备时 DPS 起不来。"],
+        },
+      ],
+    },
+    {
+      hero: "瑜",
+      aliases: ["鱼湘", "鱼妹", "鱼妹妹", "漁湘"],
+      role: "远程炮台，吃距离、会心提元和生存装备。",
+      entries: [
+        {
+          title: "路线参考",
+          sourceIds: ["jdrts-builds", "pc0359-31"],
+          summary: "瑜可走战系或法系路线。远程输出要兼顾距离收益和生存，不要因为弓手定位忽略防御与回血。",
+          points: ["战系可参考 1211 或 1111。", "法系可参考 3113 或 3121。", "部分玩家也使用 2121/2122 或 2111 提元流。"],
+        },
+        {
+          title: "单通录像与机制",
+          sourceIds: ["bili-yumei", "jdrts-attack"],
+          summary: "鱼妹完整录像适合看路线节奏；机制攻略则强调她的距离和分裂收益，站位越熟练，输出越稳定。",
+          points: ["远距离威力会提升，打 Boss 时保持安全距离很关键。", "火灵和分裂相关收益较突出，装备要围绕持续输出与生存补齐。"],
+        },
+      ],
+    },
+    {
+      hero: "藏劫如来",
+      aliases: ["斗佛", "豆腐", "和尚"],
+      role: "肉盾爆发兼顾，单通和多人都常见。",
+      entries: [
+        {
+          title: "专门心得",
+          sourceIds: ["jdrts-doufo", "pc0359-31"],
+          summary: "斗佛攻略重点在开局效率、内元/会心/提元分配、套装与防御血量。它能抗也能打，但依然需要装备节奏支撑。",
+          points: ["前期可围绕蜘蛛、狼、花任务和成长武器快速起势。", "高难单通常重视内元、提元、会心和高防高血。", "套装、败亡令、四象玉等过渡件在老攻略里被反复提到。"],
+        },
+        {
+          title: "路线与视频",
+          sourceIds: ["jdrts-builds", "bili-heshang", "bili-youshen"],
+          summary: "斗佛常见战系、法系都能玩。B站教学和殁佛流程视频更适合看实际 Boss 操作窗口。",
+          points: ["战系可参考 1311 或 1321。", "法系可参考 3121 或 3123。", "老攻略推荐 1311 作为较稳路线。"],
+        },
+      ],
+    },
+    {
+      hero: "燕落",
+      aliases: ["燕捕", "燕子"],
+      role: "高攻速、平稳输出，部分路线偏 Boss 单体。",
+      entries: [
+        {
+          title: "路线参考",
+          sourceIds: ["jdrts-builds", "pc0359-31"],
+          summary: "燕落的推荐路线多围绕燕翔、空流燕、燕雨春分的联动。杀 Boss 时更看重技能贯穿、攻速和会心提元的搭配。",
+          points: ["基流可参考 3133 或 3123。", "主动流可参考 1223。", "PC0359 攻略强调燕翔、空流燕、燕雨春分的 Boss 输出联动。"],
+        },
+        {
+          title: "英雄理解",
+          sourceIds: ["jdrts-hero-read"],
+          summary: "玩家评价燕落爆发不一定夸张，但输出较平稳，技能里带有明显的 PvP/机动倾向。",
+          points: ["适合喜欢持续输出和灵活走位的玩家。", "高难副本需要装备补足生存，不能只看攻速。"],
+        },
+      ],
+    },
+    {
+      hero: "云素青",
+      aliases: ["青麈", "青尘", "青薼"],
+      role: "内元/AOE/黑洞流派明显，路线自由度较高。",
+      entries: [
+        {
+          title: "详细加点装备",
+          sourceIds: ["pc0359-31", "jdrts-builds"],
+          summary: "青麈资料相对完整：有被动流、黑洞流、混加流等分支。单体、群怪、看家强度取决于 20/30 技能组合。",
+          points: ["基式流可参考 2132。", "黑洞流可参考 3X31 或 3231。", "也有玩家使用 2332 全内元路线。"],
+        },
+        {
+          title: "装备方向",
+          sourceIds: ["pc0359-31"],
+          summary: "老攻略给青麈列了衣服、成长武器、万花/S 武器和饰品方向，适合用来判断中后期过渡。",
+          points: ["单体输出路线前期清怪压力会更大。", "黑洞/AOE路线更利于看家和多目标场景。"],
+        },
+      ],
+    },
+    {
+      hero: "天音",
+      aliases: ["执刑仙"],
+      role: "地雷、禁断、比例斩杀路线，控制和 Boss 爆发兼具。",
+      entries: [
+        {
+          title: "技能输出测试",
+          sourceIds: ["jdrts-tianyin"],
+          summary: "天音资料以旧版本测试为主，但地结印、聚、疾行之道、皇律禁断、八斩风这些组合仍能帮助理解路线差异。",
+          points: ["地雷+聚+疾行之道+皇律禁断偏看家和综合输出。", "地雷+聚+疾行之道+八斩风偏 Boss 爆发，尤其适合血量很高的 Boss。", "全筋骨路线在测试中表现较弱，不建议新手照走。"],
+        },
+        {
+          title: "高难 Boss 经验",
+          sourceIds: ["pc0359-31"],
+          summary: "PC0359 的旧攻略把执刑仙列入能处理高难 Boss 的英雄之一，核心是天罚与断生死配合。",
+          points: ["加点可参考燕落一类的会心、身法、提元思路。", "装备推荐偏高配，适合中后期对照，不适合照搬开局。"],
+        },
+      ],
+    },
+    {
+      hero: "尹月行",
+      aliases: ["玄虚"],
+      role: "召唤/道术系，单通视频资料多于文字资料。",
+      entries: [
+        {
+          title: "视频资料索引",
+          sourceIds: ["bili-youshen"],
+          summary: "搜索结果中能找到 3.32 玄虚单撸鸠罗相、玄虚单通骨灰等视频，比文字攻略更适合观察技能节奏和 Boss 处理。",
+          points: ["先看视频确定麒麟、符法、剑阵的释放顺序。", "玄虚文字攻略较少，建议结合站内英雄技能页和视频录像一起看。"],
+        },
+        {
+          title: "系统背景",
+          sourceIds: ["cncrk-31"],
+          summary: "玄虚同样遵循四次三选一系统，路线需要围绕每阶段技能的相互影响来搭配。",
+          points: ["先确定自己要走召唤、生存还是爆发路线，再看装备。", "视频路线不一定适合低难新手开荒，需按装备强度降配。"],
+        },
+      ],
+    },
+    {
+      hero: "小葵",
+      aliases: ["身法葵"],
+      role: "身法/内力均可，有辅助和单挑 Boss 路线。",
+      entries: [
+        {
+          title: "教学视频",
+          sourceIds: ["bili-wenjian-xiaokui", "bili-youshen"],
+          summary: "小葵的高质量资料主要集中在视频：问剑及小葵教学、身法葵杀鸠罗相等，适合看技能释放和 Boss 站位。",
+          points: ["身法葵路线更重视操作和输出窗口。", "小葵有辅助能力，但单通打法更看重技能组合与装备节奏。"],
+        },
+        {
+          title: "版本资料",
+          sourceIds: ["pc0359-31", "cncrk-31"],
+          summary: "旧版本资料提到小葵能处理高难 Boss，地图说明也强调每次学习三选一会影响后续技能联动。",
+          points: ["不要只看单个技能强度，要按四轮技能组合理解。", "录像路线通常默认玩家熟悉停怪、任务和装备来源。"],
+        },
+      ],
+    },
+  ],
+};
+const guideSourceById = new Map(GUIDE_DATA.sources.map((source) => [source.id, source]));
 const itemByKey = new Map(DATA.items.map((item) => [item.key, item]));
 const setById = new Map((DATA.itemSets || []).map((itemSet) => [itemSet.id, itemSet]));
 const rawItemById = new Map((DATA.raw?.items || []).map((item) => [item.id, item]));
@@ -794,6 +1111,116 @@ function renderSets() {
         </article>
       `).join("") || empty("没有匹配的套装")}
     </div>
+  `;
+}
+
+function guideHeroIcon(group) {
+  const aliases = [group.hero, ...(group.aliases || [])].map(textKey);
+  const hero = DATA.heroes.find((candidate) => aliases.includes(textKey(candidate.name)));
+  return icon(hero?.icon, group.hero);
+}
+
+function guideSourceLinks(sourceIds = []) {
+  return sourceIds.map((id) => guideSourceById.get(id)).filter(Boolean).map((source) => `
+    <a class="guide-source-link" href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">
+      <span>原文 · ${esc(source.site)}</span>
+      <strong>${esc(source.title)}</strong>
+    </a>
+  `).join("");
+}
+
+function guideEntryCard(entry) {
+  return `
+    <article class="guide-entry-card">
+      <header>
+        <h3>${esc(entry.title)}</h3>
+        <span class="pill">${esc((entry.sourceIds || []).length)} 个来源</span>
+      </header>
+      <p>${esc(entry.summary)}</p>
+      <ul class="guide-point-list">
+        ${(entry.points || []).map((point) => `<li>${esc(point)}</li>`).join("")}
+      </ul>
+      <div class="guide-source-row">${guideSourceLinks(entry.sourceIds)}</div>
+    </article>
+  `;
+}
+
+function guideSearchText(group) {
+  const sourceText = (group.entries || []).flatMap((entry) =>
+    (entry.sourceIds || []).map((id) => guideSourceById.get(id)?.title || "")
+  );
+  return {
+    hero: group.hero,
+    aliases: group.aliases || [],
+    role: group.role || "",
+    entries: group.entries || [],
+    sources: sourceText,
+  };
+}
+
+function renderGuides() {
+  const heroes = GUIDE_DATA.heroes.filter((group) =>
+    includesQuery(guideSearchText(group), ["hero", "aliases", "role", "entries", "sources"])
+  );
+  const guideCount = GUIDE_DATA.heroes.reduce((sum, group) => sum + (group.entries || []).length, 0)
+    + (GUIDE_DATA.general || []).length;
+  const general = (GUIDE_DATA.general || []).filter((entry) =>
+    includesQuery(entry, ["title", "summary", "points", "sourceIds"])
+  );
+  return `
+    <div class="toolbar">
+      <span class="pill">外部来源 ${GUIDE_DATA.sources.length}</span>
+      <span class="pill">攻略摘要 ${guideCount}</span>
+      <span class="pill">更新 ${esc(GUIDE_DATA.updatedAt)}</span>
+    </div>
+    <div class="hero-jump-list guide-jump-list">
+      ${heroes.map((group) => `
+        <button class="hero-jump" data-guide-jump="${esc(textKey(group.hero))}">
+          ${guideHeroIcon(group).replace("object-icon", "mini-icon")}
+          <span>${esc(group.hero)}</span>
+        </button>
+      `).join("")}
+    </div>
+    <section class="guide-section">
+      <h2>通用资料</h2>
+      <div class="guide-entry-grid">
+        ${general.map(guideEntryCard).join("") || empty("没有匹配的通用攻略")}
+      </div>
+    </section>
+    <section class="guide-section">
+      <h2>资料来源</h2>
+      <div class="guide-source-grid">
+        ${GUIDE_DATA.sources.map((source) => `
+          <a class="guide-source-card" href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">
+            <span class="pill">${esc(source.site)} · ${esc(source.type)}</span>
+            <strong>${esc(source.title)}</strong>
+            <p>${esc(source.note)}</p>
+          </a>
+        `).join("")}
+      </div>
+    </section>
+    <section class="guide-section">
+      <h2>按英雄分类</h2>
+      <div class="guide-hero-stack">
+        ${heroes.map((group) => `
+          <article class="guide-hero-card" id="guide-${esc(textKey(group.hero))}">
+            <header>
+              ${guideHeroIcon(group)}
+              <div>
+                <h2>${esc(group.hero)}</h2>
+                <div class="meta-line compact">
+                  ${(group.aliases || []).map((alias) => `<span class="pill">${esc(alias)}</span>`).join("")}
+                  <span class="pill">${esc(group.role)}</span>
+                </div>
+              </div>
+            </header>
+            <div class="guide-entry-grid">
+              ${(group.entries || []).map(guideEntryCard).join("")}
+            </div>
+          </article>
+        `).join("") || empty("没有匹配的英雄攻略")}
+      </div>
+    </section>
   `;
 }
 
@@ -1944,6 +2371,17 @@ function bindDynamicControls(root = document) {
       window.setTimeout(() => target.classList.remove("located"), 1800);
     });
   });
+  root.querySelectorAll("[data-guide-jump]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const target = document.getElementById(`guide-${button.dataset.guideJump}`);
+      if (!target) return;
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      target.classList.remove("located");
+      void target.offsetWidth;
+      target.classList.add("located");
+      window.setTimeout(() => target.classList.remove("located"), 1800);
+    });
+  });
   const itemType = $("#itemType");
   if (itemType) itemType.addEventListener("change", () => {
     state.itemType = itemType.value;
@@ -1963,6 +2401,7 @@ function render() {
     heroes: renderHeroes,
     items: renderItems,
     sets: renderSets,
+    guides: renderGuides,
     map: renderMap,
     yaoyang: renderYaoyang,
     bosses: renderBosses,

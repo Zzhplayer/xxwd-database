@@ -431,6 +431,11 @@ h3 {
   border-color: var(--jade);
 }
 
+.guide-hero-card.located {
+  animation: hero-located 1.2s ease;
+  border-color: var(--jade);
+}
+
 .hero-jump-list {
   position: sticky;
   top: 86px;
@@ -462,6 +467,142 @@ h3 {
 .hero-jump:hover {
   border-color: var(--jade);
   background: #f1f8f5;
+}
+
+.guide-section {
+  margin-top: 18px;
+}
+
+.guide-section h2 {
+  margin-bottom: 12px;
+}
+
+.guide-source-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 12px;
+}
+
+.guide-source-card,
+.guide-entry-card,
+.guide-hero-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: 0 8px 26px rgba(39, 48, 42, 0.06);
+}
+
+.guide-source-card {
+  display: grid;
+  gap: 10px;
+  min-height: 150px;
+  padding: 14px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.guide-source-card:hover,
+.guide-source-link:hover {
+  border-color: var(--jade);
+  background: #f7fbf8;
+}
+
+.guide-source-card strong {
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+.guide-source-card p,
+.guide-entry-card p {
+  margin: 0;
+  color: #38433b;
+  line-height: 1.65;
+}
+
+.guide-hero-stack {
+  display: grid;
+  gap: 16px;
+}
+
+.guide-hero-card {
+  padding: 18px;
+  scroll-margin-top: 150px;
+}
+
+.guide-hero-card > header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.guide-hero-card h2 {
+  margin: 0 0 8px;
+}
+
+.guide-entry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 12px;
+}
+
+.guide-entry-card {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+}
+
+.guide-entry-card header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.guide-entry-card h3 {
+  margin: 0;
+}
+
+.guide-point-list {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+  padding-left: 18px;
+  color: #29332d;
+  line-height: 1.55;
+}
+
+.guide-source-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.guide-source-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  max-width: 100%;
+  padding: 6px 9px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.guide-source-link span {
+  flex: 0 0 auto;
+  color: var(--jade-deep);
+  font-weight: 700;
+}
+
+.guide-source-link strong {
+  overflow: hidden;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .skill-grid {
