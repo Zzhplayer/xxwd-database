@@ -21,7 +21,6 @@ let detailHistory = [];
 const navItems = [
   ["heroes", "英雄", "英", "heroes"],
   ["items", "物品", "物", "items"],
-  ["sets", "套装", "套", "itemSets"],
   ["guides", "攻略", "攻", ""],
   ["map", "地图", "图", "placements"],
   ["yaoyang", "幺阳", "阵", "yaoyangLayers"],
@@ -2132,40 +2131,6 @@ function renderItemSetSection(item) {
   `;
 }
 
-function renderSets() {
-  const allSets = DATA.itemSets || [];
-  const sets = allSets.filter((itemSet) => includesQuery(itemSet, ["name", "quality", "members", "bonuses"]));
-  return `
-    <div class="toolbar">
-      <span class="pill">套装 ${sets.length} / ${allSets.length}</span>
-      <button class="chip" data-view-jump="items">回到物品</button>
-    </div>
-    <div class="set-grid">
-      ${sets.map((itemSet) => `
-        <article class="set-card">
-          <header>
-            <div class="set-icon-stack">
-              ${(itemSet.members || []).slice(0, 4).map((member) => icon(member.icon, member.name, "mini-icon")).join("")}
-            </div>
-            <div>
-              <h2>${esc(itemSet.name)}套</h2>
-              <div class="meta-line compact">
-                <span class="pill ${qualityClass(itemSet.quality)}">${esc(itemSet.quality)}</span>
-                <span class="pill">${esc(itemSet.memberCount)} 件激活</span>
-                <span class="pill">${esc(itemSet.source || "套装触发器")}</span>
-              </div>
-            </div>
-          </header>
-          <h3>套装成员</h3>
-          ${renderSetMembers(itemSet)}
-          <h3>套装属性</h3>
-          ${renderSetBonuses(itemSet)}
-        </article>
-      `).join("") || empty("没有匹配的套装")}
-    </div>
-  `;
-}
-
 function guideHeroIcon(group) {
   const aliases = [group.hero, ...(group.aliases || [])].map(textKey);
   const hero = DATA.heroes.find((candidate) => aliases.includes(textKey(candidate.name)));
@@ -3471,7 +3436,6 @@ function render() {
   const renderers = {
     heroes: renderHeroes,
     items: renderItems,
-    sets: renderSets,
     guides: renderGuides,
     map: renderMap,
     yaoyang: renderYaoyang,
