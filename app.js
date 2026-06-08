@@ -221,6 +221,142 @@ const GUIDE_DATA = {
       url: "https://jdrts.com/17243",
       note: "天音技能组合测试，版本较早但属于 3.x 体系，可作为组合推导参考。",
     },
+    {
+      id: "tieba-good-p0",
+      site: "仙之侠道吧精品区",
+      type: "贴吧精品目录",
+      title: "仙之侠道吧精品贴目录：逆天问道 3.1、3.0 与历年攻略",
+      url: "https://tiebac.baidu.com/f/good?cid=0&ie=utf-8&kw=%E4%BB%99%E4%B9%8B%E4%BE%A0%E9%81%93&pn=0",
+      note: "精品区第一页包含逆天3.1全英雄单通、斗佛启蒙、破月鸠罗、玄虚骨灰、鱼妹攻略等帖。",
+    },
+    {
+      id: "tieba-good-p50",
+      site: "仙之侠道吧精品区",
+      type: "贴吧精品目录",
+      title: "仙之侠道吧精品贴目录：装备、流程、问答与早期逆天问道",
+      url: "https://tiebac.baidu.com/f/good?cid=0&ie=utf-8&kw=%E4%BB%99%E4%B9%8B%E4%BE%A0%E9%81%93&pn=50",
+      note: "精品区第二页包含3.1武器掉落、S衣服/Z首饰合成、逆天3.0流程、逆天2.0流程、长期问答等帖。",
+    },
+    {
+      id: "tieba-all-hero-31",
+      site: "仙之侠道吧",
+      type: "3.1 全英雄录像",
+      title: "《逆天3.1》骨灰难度所有英雄单通录像及视频",
+      url: "https://tiebac.baidu.com/p/3178605133?fr=good",
+      note: "贴吧精品帖，适合作为 3.1 全英雄路线和高难节奏索引。",
+    },
+    {
+      id: "tieba-doufo-guide-31",
+      site: "仙之侠道吧",
+      type: "3.1 斗佛启蒙",
+      title: "逆天问道3.1正式版修正单通【启蒙视频】【斗佛】",
+      url: "https://tiebac.baidu.com/p/2706395460?fr=good",
+      note: "斗佛启蒙视频帖，和 3.32 斗佛单通录像互相对照。",
+    },
+    {
+      id: "tieba-doufo-flow-31",
+      site: "仙之侠道吧",
+      type: "3.1 斗佛心得",
+      title: "斗佛单通3.1正式版修正录像及感想",
+      url: "https://tiebac.baidu.com/p/2279608973?fr=good",
+      note: "斗佛单通录像与感想帖，可补充斗佛节奏和容错思路。",
+    },
+    {
+      id: "tieba-doufu-old-flow",
+      site: "仙之侠道吧",
+      type: "早期斗佛流程",
+      title: "终于单通豆腐，发个流程跟几个建议",
+      url: "https://tiebac.baidu.com/p/766064683?fr=good",
+      note: "早期豆腐/斗佛流程帖，用来观察斗佛思路的历史稳定性。",
+    },
+    {
+      id: "tieba-poyue-jll-31",
+      site: "仙之侠道吧",
+      type: "3.1 破月技巧",
+      title: "逆天问道3.1修正 破月VS鸠罗，发福利了",
+      url: "https://tiebac.baidu.com/p/2649565444?fr=good",
+      note: "破月对鸠罗相的精品技巧帖。",
+    },
+    {
+      id: "tieba-poyue-normal",
+      site: "仙之侠道吧",
+      type: "破月单通",
+      title: "逆天破月单通正常难度，这次通关了，我去。录像献上",
+      url: "https://tiebac.baidu.com/p/2259679442?fr=good",
+      note: "破月正常难度单通录像帖，适合和高难爆发打法对照。",
+    },
+    {
+      id: "tieba-xuanxu-31",
+      site: "仙之侠道吧",
+      type: "3.1 玄虚单通",
+      title: "《逆天3.1修正》玄虚单通骨灰  最败家的英雄",
+      url: "https://tiebac.baidu.com/p/2316766023?fr=good",
+      note: "玄虚骨灰单通精品帖，标题提示玄虚装备与资源压力高。",
+    },
+    {
+      id: "tieba-yuxiang-guide",
+      site: "仙之侠道吧",
+      type: "鱼湘攻略",
+      title: "鱼妹子单通攻略",
+      url: "https://tiebac.baidu.com/p/2266593895?fr=good",
+      note: "鱼湘/鱼妹单通攻略精品帖。",
+    },
+    {
+      id: "tieba-yuxiang-normal",
+      site: "仙之侠道吧",
+      type: "3.1 鱼湘单通",
+      title: "逆天问道3.1鱼妹子单通正常难度 1杀海mm 1杀葬神殿看门boss",
+      url: "https://tiebac.baidu.com/p/2275633909?fr=good",
+      note: "鱼湘正常难度单通录像帖，重点是低压路线和 Boss 节点。",
+    },
+    {
+      id: "tieba-flow-30",
+      site: "仙之侠道吧",
+      type: "3.0 流程攻略",
+      title: "谈谈逆天3.0个人的流程，算是单通攻略吧",
+      url: "https://tiebac.baidu.com/p/2162356970?fr=good",
+      note: "3.0 单通流程帖，用于补充老版本任务、装备和停怪节奏。",
+    },
+    {
+      id: "tieba-flow-20",
+      site: "仙之侠道吧",
+      type: "2.0 流程攻略",
+      title: "好吧，有人要求，来发个逆天2.0的流程",
+      url: "https://tiebac.baidu.com/p/1049809332?fr=good",
+      note: "2.0 流程精品帖，作为历年流程演变参考，不直接替代 3.x 结论。",
+    },
+    {
+      id: "tieba-qna",
+      site: "仙之侠道吧",
+      type: "长期问答",
+      title: "《逆天问道》问题解答（长期更新）",
+      url: "https://tiebac.baidu.com/p/1083996159?fr=good",
+      note: "长期问答帖，适合补充任务、装备、Boss 与系统疑点。",
+    },
+    {
+      id: "tieba-weapons-31",
+      site: "仙之侠道吧",
+      type: "3.1 武器掉落",
+      title: "逆天问道3.1正式版所有武器掉落地点以及装备效果图",
+      url: "https://tiebac.baidu.com/p/2252867294?fr=good",
+      note: "3.1 武器掉落与效果图精品帖，可辅助装备路线总结。",
+    },
+    {
+      id: "tieba-sz-craft-31",
+      site: "仙之侠道吧",
+      type: "3.1 S/Z 合成",
+      title: "详解逆天3.1正式版3件S衣服和3个Z首饰的合成过程",
+      url: "https://tiebac.baidu.com/p/2251716839?fr=good",
+      note: "S衣服与Z首饰合成精品帖，可补充后期装备推进。",
+    },
+    {
+      id: "tieba-items-31",
+      site: "仙之侠道吧",
+      type: "3.1 衣服首饰图鉴",
+      title: "3.1正式修正版物品图鉴大全第二弹！！（衣服，首饰）",
+      url: "https://tiebac.baidu.com/p/2292673555?fr=good",
+      note: "衣服与首饰图鉴精品帖，用于装备阶段总结。",
+    },
   ],
   general: [
     {
@@ -464,8 +600,41 @@ GUIDE_DATA.general = [
     ],
   },
   {
+    title: "仙之侠道吧历年攻略索引",
+    sourceIds: ["tieba-good-p0", "tieba-good-p50", "tieba-all-hero-31", "tieba-qna"],
+    summary: "贴吧精品区能看到一条很清楚的资料脉络：早期 1.0/2.0 流程和装备整理，3.0 单通流程，3.1 全英雄骨灰录像、单英雄攻略、装备图鉴和 S/Z 合成。页面后面的英雄总结会优先采用 3.x 玩家帖和 3.32 B站录像互相印证。",
+    sections: [
+      {
+        title: "3.1 英雄与单通帖",
+        items: [
+          "全英雄：精品帖《逆天3.1骨灰难度所有英雄单通录像及视频》，适合做英雄横向比较目录。",
+          "斗佛：3.1 修正单通启蒙视频、3.1 单通录像及感想、早期豆腐流程建议，说明斗佛一直是单通热门基准英雄。",
+          "破月：3.1 修正破月 VS 鸠罗、正常难度单通录像，说明破月资料集中在 Boss 爆发和单通发育两端。",
+          "玄虚：3.1 修正玄虚骨灰单通，标题提到“最败家”，可理解为资源和装备压力很高。",
+          "鱼湘：鱼妹子单通攻略、3.1 正常难度单通帖，说明鱼湘有低压流程和后期爆发两类参考。",
+        ],
+      },
+      {
+        title: "流程与系统帖",
+        items: [
+          "3.0 流程帖《谈谈逆天3.0个人的流程，算是单通攻略吧》可补充老版本任务、停怪和装备推进。",
+          "2.0 流程帖只作为历史参考，不能直接替代 3.x 装备结论，但能看出任务优先级和单通思路如何形成。",
+          "长期问答帖适合查任务、Boss、装备疑点，后续如果能访问正文，应优先把问答拆进任务页和装备页。",
+        ],
+      },
+      {
+        title: "装备资料帖",
+        items: [
+          "3.1 所有武器掉落与效果图：用于校对职业武器线。",
+          "3.1 衣服首饰图鉴：用于校对防具、首饰阶段。",
+          "3.1 S 衣服与 Z 首饰合成过程：用于后期装备推进，尤其是两仪戒、凰王战铠、天晶/鬼域相关装备。",
+        ],
+      },
+    ],
+  },
+  {
     title: "3.x 通用发育骨架（3.32 实测路线）",
-    sourceIds: ["bili-qingzhu-explain", "bili-newbie-tasks"],
+    sourceIds: ["bili-qingzhu-explain", "bili-newbie-tasks", "tieba-flow-30", "tieba-flow-20"],
     summary: "目前能提炼出完整文字路线的是青麈单通作者简介，它不是只适用于青麈，而是一条 3.32 单人发育骨架：先任务和成长武器，再 D/C/B 装，之后五行精魄、两仪戒、鬼域、天晶洞和 Z 级材料。",
     sections: [
       {
@@ -517,6 +686,38 @@ GUIDE_DATA.general = [
       },
     ],
   },
+  {
+    title: "装备推进模板",
+    sourceIds: ["tieba-weapons-31", "tieba-items-31", "tieba-sz-craft-31", "bili-qingzhu-explain"],
+    summary: "贴吧装备帖和青麈 3.32 思路视频能互相补足：前者偏图鉴与出处，后者给出实战推进。下面按阶段整理，供所有英雄对照。",
+    sections: [
+      {
+        title: "D/C 过渡",
+        items: [
+          "任务先拿黄铜戒，升级成长武器，合成若金皮甲。若金皮甲的防御、生命和回血能显著降低前期翻车率。",
+          "水妖、山寨和熊洞阶段不要只盯武器，珊瑚硬甲、死寂玉、无恶勿作、败亡挂饰这类回血/抗性/吸血件会决定能不能连续刷 Boss。",
+          "C 级武器和开封任务是进入 B 装前的门槛，没完成时不要硬越级刷炎谷或鬼域。",
+        ],
+      },
+      {
+        title: "B/A/S 成型",
+        items: [
+          "炎谷龙魔提供各职业 B 级武器和关键材料；近战、远程、法系都应该先拿对应武器再提速。",
+          "五行精魄、四象玉、四方戒、两仪戒是中后期共同目标；两仪戒属于质变首饰，不要把材料线拖太晚。",
+          "鬼域补 A 武器和鬼帝瞳，天晶洞补天晶木戒等免控/高生存装备。后期 Boss 不是单纯输出检查，也是在检查抗性和控制免疫。",
+        ],
+      },
+      {
+        title: "路线差异",
+        items: [
+          "战系近战：武器、物攻、筋骨/身法、攻速、会心/提元、吸血一起推进。",
+          "远程弓系：武器、攻速、会心/提元、分裂/普攻增幅之外，要额外重视站位、免控和移动。",
+          "内元法系：内元、极元修为、冷却、范围和生存优先；不要照战系模板堆物攻。",
+          "召唤/控制系：除了自身面板，还要看召唤物持续输出、控制覆盖率和范围技能命中率。",
+        ],
+      },
+    ],
+  },
 ];
 
 GUIDE_DATA.heroes = [
@@ -527,7 +728,7 @@ GUIDE_DATA.heroes = [
     entries: [
       {
         title: "问剑技能路线",
-        sourceIds: ["jdrts-builds", "jdrts-hero-read"],
+        sourceIds: ["jdrts-builds", "jdrts-hero-read", "tieba-all-hero-31"],
         summary: "问剑可以按战系普攻、战系单通爆发、法系技能三类理解。玩家帖明确给出了 1111、1311、3223、3233 等路数。",
         sections: [
           {
@@ -600,7 +801,7 @@ GUIDE_DATA.heroes = [
     entries: [
       {
         title: "破月骨灰单通与鸠罗相处理",
-        sourceIds: ["jdrts-builds", "jdrts-hero-read", "bili-poyue-single", "bili-poyue-jll"],
+        sourceIds: ["jdrts-builds", "jdrts-hero-read", "bili-poyue-single", "bili-poyue-jll", "tieba-poyue-jll-31", "tieba-poyue-normal"],
         summary: "破月玩家帖把路线分为生存流与极限流；3.32 破月骨灰单通和单挑鸠罗相视频可验证 Boss 处理窗口。",
         sections: [
           {
@@ -618,6 +819,7 @@ GUIDE_DATA.heroes = [
               "前期不要为了输出牺牲生存，破月死一次会严重断节奏。",
               "打 Boss 时先确认吸血、回血和保命技能，再开八荒/月影；低血不是无脑卖血。",
               "短视频里的鸠罗相爆发要和完整单通录像的装备节点一起看，否则只学到最后一刀。",
+              "贴吧资料把破月分成鸠罗相技巧帖和正常难度单通帖两类：前者看操作窗口，后者看装备发育，二者要合起来读。",
             ],
           },
           {
@@ -638,7 +840,7 @@ GUIDE_DATA.heroes = [
     entries: [
       {
         title: "鱼湘单通与远程爆发",
-        sourceIds: ["jdrts-builds", "jdrts-attack", "bili-yuxiang-single"],
+        sourceIds: ["jdrts-builds", "jdrts-attack", "bili-yuxiang-single", "tieba-yuxiang-guide", "tieba-yuxiang-normal"],
         summary: "鱼湘玩家路线有战系、法系和提元流。鱼香单通视频作者特别提醒套装穿戴顺序会影响伤害，说明后期输出很吃装备细节。",
         sections: [
           {
@@ -656,6 +858,7 @@ GUIDE_DATA.heroes = [
               "远程英雄最怕前期被摸死，先按通用发育骨架把防具、回血和移动补齐。",
               "保持距离是输出的一部分；站得太近会把远程优势变成脆皮劣势。",
               "作者提示套装穿戴顺序影响伤害，后期更换套装时要实测，不要只看面板。",
+              "贴吧鱼妹攻略和正常难度单通帖说明：鱼湘不是只能看后期暴击，前期能否顺利过渡到弓系装备才是关键。",
             ],
           },
           {
@@ -676,7 +879,7 @@ GUIDE_DATA.heroes = [
     entries: [
       {
         title: "斗佛多作者单通对照",
-        sourceIds: ["jdrts-builds", "jdrts-doufo", "bili-doufo-single-a", "bili-doufo-single-b", "bili-doufo-single-c"],
+        sourceIds: ["jdrts-builds", "jdrts-doufo", "bili-doufo-single-a", "bili-doufo-single-b", "bili-doufo-single-c", "tieba-doufo-guide-31", "tieba-doufo-flow-31", "tieba-doufu-old-flow"],
         summary: "斗佛有玩家心得和三份 3.32 玩家单通来源，可以横向看出共性：能抗、能控，但输出不能掉队。",
         sections: [
           {
@@ -694,6 +897,7 @@ GUIDE_DATA.heroes = [
               "斗佛不怕打持久战，但怕输出太低导致刷新和守家压力堆叠。",
               "莲华圣体不要随手交，留给 Boss 爆发、控制链或危险转场。",
               "多作者单通都应重点对比：第一次能刷 B 装的时间、进入鬼域时间、终局 Boss 前的首饰质量。",
+              "贴吧从早期“豆腐流程建议”到 3.1 斗佛启蒙和单通感想，都说明斗佛的优势不是秒杀，而是容错高、能把流程稳定跑完。",
             ],
           },
           {
@@ -714,7 +918,7 @@ GUIDE_DATA.heroes = [
     entries: [
       {
         title: "燕捕单通与 5 段 96 样本",
-        sourceIds: ["jdrts-builds", "jdrts-hero-read", "bili-yanbu-single-a", "bili-yanbu-single-b", "bili-yanzi-96"],
+        sourceIds: ["jdrts-builds", "jdrts-hero-read", "bili-yanbu-single-a", "bili-yanbu-single-b", "bili-yanzi-96", "tieba-all-hero-31"],
         summary: "燕捕有玩家加点路数、两份单通和一份高难 Boss 样本。单通看节奏，高难切片看终局输出窗口。",
         sections: [
           {
@@ -752,7 +956,7 @@ GUIDE_DATA.heroes = [
     entries: [
       {
         title: "青麈单人通关提炼",
-        sourceIds: ["jdrts-builds", "bili-qingzhu-explain", "bili-qingzhu-single-song", "bili-qingzhu-normal"],
+        sourceIds: ["jdrts-builds", "bili-qingzhu-explain", "bili-qingzhu-single-song", "bili-qingzhu-normal", "tieba-flow-30", "tieba-items-31", "tieba-sz-craft-31"],
         summary: "青麈资料质量最好：玩家帖给出多种数字路线，一份 3.32 思路讲解视频又补足了发育路线。",
         sections: [
           {
@@ -831,7 +1035,7 @@ GUIDE_DATA.heroes = [
     entries: [
       {
         title: "玄虚单通与单撸鸠罗相",
-        sourceIds: ["bili-xuanxu-single", "bili-xuanxu-jll"],
+        sourceIds: ["bili-xuanxu-single", "bili-xuanxu-jll", "tieba-xuanxu-31"],
         summary: "玄虚有一份骨灰单通长录像和一份单撸鸠罗相短视频：长录像看发育，短视频看 Boss 操作。",
         sections: [
           {
@@ -848,6 +1052,7 @@ GUIDE_DATA.heroes = [
               "召唤路线不要只看本体装备，道麟能否持续输出决定清怪和 Boss 速度。",
               "净灵符、血心爆、太初雷引都需要把怪控制在范围内，站位比面板更重要。",
               "单撸鸠罗相短视频适合学习 Boss 处理，但完整路线要看单通长录像。",
+              "贴吧 3.1 玄虚骨灰帖标题称其为“最败家”的英雄，可理解为玄虚很吃资源、装备和流程熟练度，新手不要只照技能组合。",
             ],
           },
           {
