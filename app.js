@@ -214,14 +214,6 @@ const GUIDE_DATA = {
       note: "玩家对普通攻击、会心、提元、分裂、远程距离等机制的整理。",
     },
     {
-      id: "jdrts-tianyin",
-      site: "JDRTS 玩家帖",
-      type: "3.x 天音测试",
-      title: "天音技能加点输出测试",
-      url: "https://jdrts.com/17243",
-      note: "天音技能组合测试，版本较早但属于 3.x 体系，可作为组合推导参考。",
-    },
-    {
       id: "tieba-good-p0",
       site: "仙之侠道吧精品区",
       type: "贴吧精品目录",
@@ -235,7 +227,7 @@ const GUIDE_DATA = {
       type: "贴吧精品目录",
       title: "仙之侠道吧精品贴目录：装备、流程、问答与早期逆天问道",
       url: "https://tiebac.baidu.com/f/good?cid=0&ie=utf-8&kw=%E4%BB%99%E4%B9%8B%E4%BE%A0%E9%81%93&pn=50",
-      note: "精品区第二页包含3.1武器掉落、S衣服/Z首饰合成、逆天3.0流程、逆天2.0流程、长期问答等帖。",
+      note: "精品区第二页包含3.1武器掉落、S衣服/Z首饰合成、逆天3.0流程、长期问答等帖；旧版本帖只作目录背景。",
     },
     {
       id: "tieba-all-hero-31",
@@ -260,14 +252,6 @@ const GUIDE_DATA = {
       title: "斗佛单通3.1正式版修正录像及感想",
       url: "https://tiebac.baidu.com/p/2279608973?fr=good",
       note: "斗佛单通录像与感想帖，可补充斗佛节奏和容错思路。",
-    },
-    {
-      id: "tieba-doufu-old-flow",
-      site: "仙之侠道吧",
-      type: "早期斗佛流程",
-      title: "终于单通豆腐，发个流程跟几个建议",
-      url: "https://tiebac.baidu.com/p/766064683?fr=good",
-      note: "早期豆腐/斗佛流程帖，用来观察斗佛思路的历史稳定性。",
     },
     {
       id: "tieba-poyue-jll-31",
@@ -316,14 +300,6 @@ const GUIDE_DATA = {
       title: "谈谈逆天3.0个人的流程，算是单通攻略吧",
       url: "https://tiebac.baidu.com/p/2162356970?fr=good",
       note: "3.0 单通流程帖，用于补充老版本任务、装备和停怪节奏。",
-    },
-    {
-      id: "tieba-flow-20",
-      site: "仙之侠道吧",
-      type: "2.0 流程攻略",
-      title: "好吧，有人要求，来发个逆天2.0的流程",
-      url: "https://tiebac.baidu.com/p/1049809332?fr=good",
-      note: "2.0 流程精品帖，作为历年流程演变参考，不直接替代 3.x 结论。",
     },
     {
       id: "tieba-qna",
@@ -602,13 +578,13 @@ GUIDE_DATA.general = [
   {
     title: "仙之侠道吧历年攻略索引",
     sourceIds: ["tieba-good-p0", "tieba-good-p50", "tieba-all-hero-31", "tieba-qna"],
-    summary: "贴吧精品区能看到一条很清楚的资料脉络：早期 1.0/2.0 流程和装备整理，3.0 单通流程，3.1 全英雄骨灰录像、单英雄攻略、装备图鉴和 S/Z 合成。页面后面的英雄总结会优先采用 3.x 玩家帖和 3.32 B站录像互相印证。",
+    summary: "贴吧精品区能看到一条很清楚的 3.x 资料脉络：3.0 单通流程，3.1 全英雄骨灰录像、单英雄攻略、装备图鉴和 S/Z 合成。页面后面的英雄总结会优先采用 3.x 玩家帖和 3.32 B站录像互相印证。",
     sections: [
       {
         title: "3.1 英雄与单通帖",
         items: [
           "全英雄：精品帖《逆天3.1骨灰难度所有英雄单通录像及视频》，适合做英雄横向比较目录。",
-          "斗佛：3.1 修正单通启蒙视频、3.1 单通录像及感想、早期豆腐流程建议，说明斗佛一直是单通热门基准英雄。",
+          "斗佛：3.1 修正单通启蒙视频、3.1 单通录像及感想，说明斗佛是单通热门基准英雄。",
           "破月：3.1 修正破月 VS 鸠罗、正常难度单通录像，说明破月资料集中在 Boss 爆发和单通发育两端。",
           "玄虚：3.1 修正玄虚骨灰单通，标题提到“最败家”，可理解为资源和装备压力很高。",
           "鱼湘：鱼妹子单通攻略、3.1 正常难度单通帖，说明鱼湘有低压流程和后期爆发两类参考。",
@@ -618,7 +594,6 @@ GUIDE_DATA.general = [
         title: "流程与系统帖",
         items: [
           "3.0 流程帖《谈谈逆天3.0个人的流程，算是单通攻略吧》可补充老版本任务、停怪和装备推进。",
-          "2.0 流程帖只作为历史参考，不能直接替代 3.x 装备结论，但能看出任务优先级和单通思路如何形成。",
           "长期问答帖适合查任务、Boss、装备疑点，后续如果能访问正文，应优先把问答拆进任务页和装备页。",
         ],
       },
@@ -634,7 +609,7 @@ GUIDE_DATA.general = [
   },
   {
     title: "3.x 通用发育骨架（3.32 实测路线）",
-    sourceIds: ["bili-qingzhu-explain", "bili-newbie-tasks", "tieba-flow-30", "tieba-flow-20"],
+    sourceIds: ["bili-qingzhu-explain", "bili-newbie-tasks", "tieba-flow-30"],
     summary: "目前能提炼出完整文字路线的是青麈单通作者简介，它不是只适用于青麈，而是一条 3.32 单人发育骨架：先任务和成长武器，再 D/C/B 装，之后五行精魄、两仪戒、鬼域、天晶洞和 Z 级材料。",
     sections: [
       {
@@ -879,7 +854,7 @@ GUIDE_DATA.heroes = [
     entries: [
       {
         title: "斗佛多作者单通对照",
-        sourceIds: ["jdrts-builds", "jdrts-doufo", "bili-doufo-single-a", "bili-doufo-single-b", "bili-doufo-single-c", "tieba-doufo-guide-31", "tieba-doufo-flow-31", "tieba-doufu-old-flow"],
+        sourceIds: ["jdrts-builds", "jdrts-doufo", "bili-doufo-single-a", "bili-doufo-single-b", "bili-doufo-single-c", "tieba-doufo-guide-31", "tieba-doufo-flow-31"],
         summary: "斗佛有玩家心得和三份 3.32 玩家单通来源，可以横向看出共性：能抗、能控，但输出不能掉队。",
         sections: [
           {
@@ -897,7 +872,7 @@ GUIDE_DATA.heroes = [
               "斗佛不怕打持久战，但怕输出太低导致刷新和守家压力堆叠。",
               "莲华圣体不要随手交，留给 Boss 爆发、控制链或危险转场。",
               "多作者单通都应重点对比：第一次能刷 B 装的时间、进入鬼域时间、终局 Boss 前的首饰质量。",
-              "贴吧从早期“豆腐流程建议”到 3.1 斗佛启蒙和单通感想，都说明斗佛的优势不是秒杀，而是容错高、能把流程稳定跑完。",
+              "贴吧 3.1 斗佛启蒙和单通感想说明：斗佛的优势不是单纯秒杀，而是容错高、能把流程稳定跑完。",
             ],
           },
           {
@@ -997,12 +972,12 @@ GUIDE_DATA.heroes = [
   {
     hero: "天音",
     aliases: ["执刑仙"],
-    role: "3.x 技能测试资料较少，以下以玩家测试帖和地图技能推导为主。",
+    role: "合格玩家专帖较少，以下以3.1全英雄索引和地图技能推导为主。",
     entries: [
       {
         title: "天音技能方向",
-        sourceIds: ["jdrts-tianyin"],
-        summary: "天音可按地雷、判律控制、天罚普攻三类理解。玩家测试帖能支撑部分组合方向，但还缺少足够多的 3.32 单通来源。",
+        sourceIds: ["tieba-all-hero-31"],
+        summary: "天音可按地雷、判律控制、天罚普攻三类理解。现阶段缺少足够多的 3.x 专门文字帖，下面把玩家全英雄索引、站内技能说明和 Boss 场景做成低风险推导。",
         sections: [
           {
             title: "技能组合",
@@ -1022,7 +997,7 @@ GUIDE_DATA.heroes = [
           },
           {
             title: "待补来源",
-            items: ["需要 3.x 天音单通、执刑仙加点或玩家文字帖继续验证 2213 / 2211 是否稳定。"],
+            items: ["需要 3.x 天音单通、执刑仙加点或玩家文字帖继续验证 2213 / 2211 的稳定性；当前先按技能机制和全英雄索引保守处理。"],
           },
         ],
       },
@@ -1103,6 +1078,329 @@ GUIDE_DATA.heroes = [
     ],
   },
 ];
+
+const guideDeepeningByHero = {
+  "问剑": {
+    title: "问剑实战细化",
+    sourceIds: ["jdrts-builds", "jdrts-hero-read", "tieba-all-hero-31", "tieba-flow-30"],
+    summary: "问剑的关键不是背一个固定答案，而是先决定自己这局要当战系普攻、战系单通爆发，还是法系技能流。三条路线装备、站位和技能窗口都不同。",
+    sections: [
+      {
+        title: "组合取舍",
+        items: [
+          "1111 是最稳的战系多通模板：剑痕、残影和孤星的联动最直观，队友能补控制或任务时收益很高。",
+          "1311 更像单通清怪版：剑心诀把剑痕扩散到周围，前中期推图舒服，但打纯单体 Boss 时要靠装备补伤害。",
+          "3223 / 3233 是飞仙/心剑思路：输出来自技能循环和滴血心剑，操作失误会比战系更伤，因为技能空转就是少一整轮爆发。",
+        ],
+      },
+      {
+        title: "节奏规划",
+        items: [
+          "战系问剑前期不要只追武器，黄铜戒、若金皮甲、熊洞过渡、防具和吸血都要同步，否则进中期 Boss 会频繁断节奏。",
+          "法系问剑从一开始就要围绕内元、极元修为、冷却和生存拿装备，物攻装只是过渡，不要把资源全砸到战系属性上。",
+          "单通时优先保证守家和停怪节点稳定；问剑清怪能力强，但越级打 Boss 很容易因为防御/抗性不足翻车。",
+        ],
+      },
+      {
+        title: "操作细节",
+        items: [
+          "战系打 Boss 前等核心触发窗口，不要先把孤星或爆发技能交在小怪身上。",
+          "法系打多怪时先拉位置再放技能，让直线、范围和心剑都能吃满目标；打单体时宁可慢半拍，也不要在 Boss 位移时空放。",
+          "问剑属于上限高、分支多的英雄，新手先用 1311 或 1111 熟悉节奏，再尝试 3223/3233。",
+        ],
+      },
+    ],
+  },
+  "萧梦寻": {
+    title: "法魂实战细化",
+    sourceIds: ["jdrts-builds", "jdrts-hero-read", "jdrts-attack", "bili-fahun-jll", "tieba-all-hero-31"],
+    summary: "法魂看起来是远程法系，实际有反伤、炎鸟暴力、主动黑炎三套玩法。她强在输出曲线高，但弱点是站位、抗压和技能交错。",
+    sections: [
+      {
+        title: "组合取舍",
+        items: [
+          "2232 适合先学：炎鸟 + 法咒一式 + 六道之护 + 祝融悲歌，容错来自六道之护和反伤，单通更稳。",
+          "2212 输出更爽：炎鸟 + 法咒一式 + 朱炎一羽 + 祝融悲歌，装备成型后爆发明显，但对站位和生存要求更高。",
+          "1212 主动技能感更强：黑炎 + 法咒一式 + 朱炎一羽 + 祝融悲歌，适合熟悉 Boss 抬手、能保证技能命中的玩家。",
+        ],
+      },
+      {
+        title: "装备与属性",
+        items: [
+          "炎鸟/祝融路线除了内元、极元修为，也要看攻速和普攻增幅，因为部分输出来自持续触发。",
+          "黑炎主动路线更依赖冷却、法术爆发和范围命中，装备没成型前不要急着挑战高压 Boss。",
+          "远程距离会影响法魂普通攻击收益，结合普通攻击机制帖，法魂不要贴脸站桩输出。",
+        ],
+      },
+      {
+        title: "实战节奏",
+        items: [
+          "鸠罗相这类单 Boss 要先卡距离，再交控制或保命；法魂不是斗佛，不能靠脸硬抗完整爆发。",
+          "前期任务、熊洞和 C/B 装节奏不能掉，法魂一旦装备落后，会从高输出变成脆皮。",
+          "多人局可用 2212/1212 抢输出，单通不熟练时优先 2232。",
+        ],
+      },
+    ],
+  },
+  "望缺": {
+    title: "破月实战细化",
+    sourceIds: ["jdrts-builds", "jdrts-hero-read", "jdrts-attack", "bili-poyue-single", "bili-poyue-jll", "tieba-poyue-jll-31", "tieba-poyue-normal"],
+    summary: "破月是典型的高收益高风险英雄。玩家资料反复指向同一点：破月能打得很漂亮，但装备、吸血和开爆发的时机必须跟上。",
+    sections: [
+      {
+        title: "组合取舍",
+        items: [
+          "2233 是最推荐的新手单通路线：血刀 + 刀解式 + 血劫 + 恨缺殇亡，回血和低血收益兼顾。",
+          "2232 是更实用的极限变体：血刀 + 刀解式 + 血劫 + 月影千华，比 2212 少一点纯爆发，多一点续航安全。",
+          "2212 追求输出上限：血刀 + 刀解式 + 八荒狂野 + 月影千华，适合对 Boss 时间轴很熟的玩家。",
+          "1211 属于爆发玩法：殇亡一刀 + 刀解式 + 八荒狂野 + 红月三千破，打短窗口很猛，但容错最低。",
+        ],
+      },
+      {
+        title: "装备优先级",
+        items: [
+          "刀、物攻、筋骨、会心/提元是破月伤害底座；吸血、生命和防御是能不能活到爆发窗口的底座。",
+          "低血收益不是让你无脑残血，打高压 Boss 前要确认吸血、回血和保命道具都在线。",
+          "如果前期 C/B 装落后，不要硬追鸠罗相或高阶 Boss，先补能稳定刷图的过渡装备。",
+        ],
+      },
+      {
+        title: "Boss 操作",
+        items: [
+          "单挑鸠罗相要先处理站位，再开爆发；视频里的高伤害往往发生在装备和血线都准备好的窗口。",
+          "月影、八荒、红月这些技能要串在吸血和输出窗口里，先开输出后找保命往往来不及。",
+          "破月最怕死后断节奏，所以单通以稳定完成任务和装备节点为先，爆发演出排第二。",
+        ],
+      },
+    ],
+  },
+  "瑜": {
+    title: "鱼湘实战细化",
+    sourceIds: ["jdrts-builds", "jdrts-attack", "bili-yuxiang-single", "tieba-yuxiang-guide", "tieba-yuxiang-normal"],
+    summary: "鱼湘不是只有后期暴击数字。她的核心是远程距离、会心/提元、分裂和装备穿戴细节，前期能不能顺滑过渡决定后期能不能变炮台。",
+    sections: [
+      {
+        title: "组合取舍",
+        items: [
+          "1211 / 1111 是战系弓流：虹刃 + 会神/韧弦 + 候鹰 + 秘法箭矢，输出直观，适合靠弓系装备放大普攻。",
+          "2121 / 2122 / 2111 是提元流：百川无尽 + 韧弦 + 连坞/候鹰 + 秘法箭矢/翼行九天，后期上限高，但装备和站位要求更细。",
+          "3113 / 3121 是法系/毒系理解：蜀花香 + 韧弦/会神 + 连坞/候鹰 + 千鸟归魂/秘法箭矢，适合想要范围和持续伤害的玩家。",
+        ],
+      },
+      {
+        title: "装备节奏",
+        items: [
+          "先把弓、攻速、会心/提元和分裂收益做出来，再追求大数字暴击；没有攻速和命中窗口，面板再高也空转。",
+          "普通攻击机制帖明确远程距离会影响收益，鱼湘要学会拉开距离打，而不是贴 Boss 站。",
+          "单通视频作者提到套装穿戴顺序会影响伤害，后期换装时要看实际输出，不要只看装备品质。",
+        ],
+      },
+      {
+        title: "操作重点",
+        items: [
+          "鱼湘前期脆，防具和回血不要省；活着输出比少一件攻击装更重要。",
+          "打多怪时利用分裂和距离，打单 Boss 时看会心/提元窗口，不要盲目追身位。",
+          "多人局可以更激进堆输出，单通要优先让自己不被控制、不被秒。",
+        ],
+      },
+    ],
+  },
+  "藏劫如来": {
+    title: "斗佛实战细化",
+    sourceIds: ["jdrts-builds", "jdrts-doufo", "bili-doufo-single-a", "bili-doufo-single-b", "bili-doufo-single-c", "tieba-doufo-guide-31", "tieba-doufo-flow-31"],
+    summary: "斗佛资料多，结论也更清楚：他不是单纯肉，也不是单纯法师，而是能用容错把流程跑稳，再在关键节点集中输出。",
+    sections: [
+      {
+        title: "组合取舍",
+        items: [
+          "1311 是推荐战系基准：罗汉长拳 + 达摩心经 + 大悲菩提 + 圣行，成型稳定，适合学习单通节奏。",
+          "1321 用莲华圣体换一部分攻速，适合对 Boss 还不熟、想要更多保命的人。",
+          "3121 / 3123 是法系斗佛：太罗禅印 + 无量义经 + 莲华圣体 + 圣行/天龙吼，输出形态不同，装备要转内元和法术。",
+          "2222 偏控制坦克：佛怒海 + 金刚经 + 莲华圣体 + 天龙八部赞，适合多人局或不熟悉高压节点时保底。",
+        ],
+      },
+      {
+        title: "发育节奏",
+        items: [
+          "斗佛玩家心得提到第一波兵前刷蜘蛛到 10 级的节奏，这说明斗佛前期可以主动抢等级和资源。",
+          "中期不要只堆肉，输出不够会拖慢熊洞、炎谷、鬼域节奏，最终导致守家压力变大。",
+          "败亡令、套装、防御和回血对斗佛价值很高，因为斗佛很多输出窗口建立在能站住的前提上。",
+        ],
+      },
+      {
+        title: "操作重点",
+        items: [
+          "莲华圣体、圣行和控制技能要留给真正危险的 Boss 或守家波次，不要因为手痒随便交。",
+          "多作者单通要重点比较第一次成型 B 武器、第一次进鬼域、第一次打高阶 Boss 的时间点。",
+          "新手可以把斗佛当学习流程的基准英雄：先学会稳定，再追求更快。",
+        ],
+      },
+    ],
+  },
+  "燕落": {
+    title: "燕落实战细化",
+    sourceIds: ["jdrts-builds", "jdrts-hero-read", "bili-yanbu-single-a", "bili-yanbu-single-b", "bili-yanzi-96", "tieba-all-hero-31"],
+    summary: "燕落强在机动和持续普攻，不是站桩爆发英雄。她的路线要围绕位移、攻速、距离和 Boss 输出窗口设计。",
+    sections: [
+      {
+        title: "组合取舍",
+        items: [
+          "3133 / 3123 是玩家帖推荐基流：燕翔 + 辅皇诀/神皇诀 + 空流燕 + 燕雨春分，清怪和 Boss 都均衡。",
+          "1223 主动流更吃操作：燕回旋 + 神皇诀 + 空流燕 + 燕雨春分，需要更主动地把技能穿插进普攻窗口。",
+          "2122 偏控制保命：燕去燕返 + 辅皇诀 + 归燕回旋 + 夜燕啼鸣，适合不熟悉 Boss 位移时使用。",
+          "3311 冲刺爆发：燕翔 + 战皇诀 + 燕双飞 + 万燕怒蓝关，收益取决于距离和走位。",
+        ],
+      },
+      {
+        title: "装备节奏",
+        items: [
+          "长兵、攻速、物攻、筋骨/身法、会心/提元都重要，燕落不适合只堆单一属性。",
+          "因为需要贴近或反复位移输出，防具、回血、免控同样关键；脆皮燕落打不了长 Boss。",
+          "高难 96 样本看的是终局操作，不等于前期路线，还是要回看单通视频的装备节点。",
+        ],
+      },
+      {
+        title: "操作重点",
+        items: [
+          "位移技能要留退路，不要所有位移都当作追击键。",
+          "燕雨春分和空流燕要尽量覆盖 Boss 输出窗口，清小怪时不要浪费关键保命。",
+          "燕落输出平稳，适合有耐心的玩家；想一刀秒 Boss 的体验不如破月。",
+        ],
+      },
+    ],
+  },
+  "云素青": {
+    title: "青麈实战细化",
+    sourceIds: ["jdrts-builds", "bili-qingzhu-explain", "bili-qingzhu-single-song", "bili-qingzhu-normal", "tieba-flow-30", "tieba-items-31", "tieba-sz-craft-31"],
+    summary: "青麈是当前攻略页里资料质量最高的英雄之一：有组合帖，有讲解视频，还有相对清楚的装备路线。她适合写成完整单通模板。",
+    sections: [
+      {
+        title: "组合取舍",
+        items: [
+          "2132 基式流最适合入门：悔无 + 贯日心诀 + 灭天邪印 + 天灭式，清怪和 Boss 都有基本答案。",
+          "3131 / 3231 黑洞流重清怪与控场：悲天神击 + 贯日/灭天心诀 + 灭天邪印 + 天罡幽绝阵，守家和多怪压力小。",
+          "2332 全内元更偏高配：悔无 + 绝路心诀 + 灭天邪印 + 天灭式，上限高但吃装备。",
+          "1111 远程穿透稳扎稳打：悔元归一 + 贯日心诀 + 悲极归元 + 天罡幽绝阵，适合想少犯错的玩家。",
+        ],
+      },
+      {
+        title: "路线拆解",
+        items: [
+          "开局敦煌镖、蜘蛛、打狼、采药和黄铜戒是地基；不要跳过这些直接追高阶 Boss。",
+          "30 级以后熊洞、幺阳、水妖、山寨头目循环推进；死寂玉、珊瑚硬甲、无恶勿作是很实用的过渡。",
+          "中后期围绕五行精魄、四象玉、四方戒、两仪戒、炎谷 B 武器、鬼域 A 武器和天晶木戒推进。",
+        ],
+      },
+      {
+        title: "操作重点",
+        items: [
+          "黑洞/AOE路线要学会拉怪再放，不然技能覆盖不到关键目标。",
+          "青麈不是只靠一个大招吃全图，真正强在发育不断档、装备节点清晰。",
+          "单通新手建议先 2132 或 3131，熟悉后再尝试 2332 高配路线。",
+        ],
+      },
+    ],
+  },
+  "天音": {
+    title: "天音实战细化",
+    sourceIds: ["tieba-all-hero-31", "tieba-qna", "bili-newbie-tasks"],
+    summary: "天音专门玩家攻略较少，所以这部分写得更保守：优先把能解释清楚的地雷、判律、天罚三类玩法区分开，避免把不同路线混在一起。",
+    sections: [
+      {
+        title: "组合取舍",
+        items: [
+          "2213 地雷禁断：地结印 + 聚 + 疾行之道 + 皇律禁断，偏单通稳定，能看家也能打 Boss。",
+          "2211 地雷八斩风：地结印 + 聚 + 疾行之道 + 判生断死。八斩风，更偏高血 Boss 起手/收尾，群怪能力弱一些。",
+          "3233 判律控制：判律之刃 + 聚 + 止禁之刀 + 皇律禁断，控制和范围更好，适合处理高压怪群。",
+          "1111 天罚普攻：天罚刀式 + 疾 + 疾行之道 + 判生断死。八斩风，偏身法/物攻路线，当前缺少玩家专帖验证，谨慎使用。",
+        ],
+      },
+      {
+        title: "装备节奏",
+        items: [
+          "地雷/判律路线优先内元、极元修为、冷却和生存，不要被刀类外观误导成纯物理。",
+          "天罚普攻才看身法、物攻、攻速和会心/提元；如果走这条，装备路线要从前期就分开。",
+          "天音缺少大量高质量专门帖，单通时更要依赖通用发育骨架，先稳定任务和装备节点。",
+        ],
+      },
+      {
+        title: "操作重点",
+        items: [
+          "地雷路线要提前布场，不要等 Boss 贴脸才开始铺技能。",
+          "判生断死适合处理高血量 Boss 的关键血线，别浪费在小怪身上。",
+          "看家压力大时优先 2213，想抢 Boss 输出再考虑 2211。",
+        ],
+      },
+    ],
+  },
+  "尹月行": {
+    title: "玄虚实战细化",
+    sourceIds: ["bili-xuanxu-single", "bili-xuanxu-jll", "tieba-xuanxu-31", "tieba-all-hero-31"],
+    summary: "玄虚的核心不是本体面板，而是召唤、控制和法阵能不能持续工作。贴吧标题把他称为“最败家”，说明资源压力和装备依赖都不低。",
+    sections: [
+      {
+        title: "组合取舍",
+        items: [
+          "2223 / 2221 道麟召唤：召唤道麟 + 玄妙心法 + 掠影 + 十方剑阵/太初雷引法阵，核心是让道麟持续输出。",
+          "3232 / 3231 净灵符控制：太虚净灵符 + 玄妙心法 + 血心爆 + 魔行圣踪/太初雷引法阵，更偏聚怪、减速和法术爆发。",
+          "1313 / 1323 剑法续航：玄真剑法 + 魔炼之元 + 乾坤一剑/掠影 + 十方剑阵，偏本体输出，装备路线会更接近战系。",
+        ],
+      },
+      {
+        title: "装备节奏",
+        items: [
+          "召唤/法术路线优先内元、极元修为、法术增幅、生存和冷却；本体物攻不是第一目标。",
+          "剑法续航路线才需要更多筋骨、物攻和攻速，不要把召唤路线和剑法路线装备混成四不像。",
+          "玄虚吃资源，前中期不要越级硬打；能稳定拿材料和装备比短时间高爆发更重要。",
+        ],
+      },
+      {
+        title: "操作重点",
+        items: [
+          "道麟要保持在有效输出位置，召唤物被拉远或卡住时，玄虚输出会明显断档。",
+          "净灵符、血心爆、太初雷引这类技能要配合拉怪和站位，空放会让清怪速度断层。",
+          "鸠罗相短视频只看 Boss 处理，完整发育仍以骨灰单通长录像为主。",
+        ],
+      },
+    ],
+  },
+  "小葵": {
+    title: "小葵实战细化",
+    sourceIds: ["bili-xiaokui-jll", "tieba-all-hero-31", "bili-jump-points"],
+    summary: "小葵目前缺完整玩家文字攻略，但技能结构很清楚：身法普攻、内元控制、圣印辅助三条线不能混着学。身法葵鸠罗相视频只能证明单 Boss 处理，不等于完整单通。",
+    sections: [
+      {
+        title: "组合取舍",
+        items: [
+          "1112 / 1312 身法普攻：小葵神剑 + 小葵定律/小葵法规 + 剑影同途 + 绕花乱舞，最适合围绕分身和身法打单 Boss。",
+          "3223 / 3323 内元控制：混元剑渡 + 小葵原则/小葵法规 + 躲猫猫 + 彩龙裂空，清怪、控制和保命更好。",
+          "1131 / 3133 圣印辅助：小葵神剑/混元剑渡 + 对应二段 + 圣印加持 + 尽散霞光/彩龙裂空，多人局更有价值。",
+        ],
+      },
+      {
+        title: "装备节奏",
+        items: [
+          "身法葵优先身法、物攻、攻速、会心/提元和生存；她要靠分身和绕花乱舞打出窗口。",
+          "内元葵优先内元、极元修为、范围、冷却和控制，不能照身法葵堆物攻。",
+          "小葵没有足够完整单通样本时，新手应先照通用发育骨架拿稳装备，再练 Boss 技巧。",
+        ],
+      },
+      {
+        title: "操作重点",
+        items: [
+          "躲猫猫是保命和调位置的关键，不要当普通输出技能乱交。",
+          "绕花乱舞打单体时要等分身和输出窗口，过早交会浪费爆发。",
+          "小葵对跑图和站位很敏感，跳点、任务路线和 Boss 位置熟练度会直接影响强度。",
+        ],
+      },
+    ],
+  },
+};
+
+GUIDE_DATA.heroes = GUIDE_DATA.heroes.map((group) => {
+  const extra = guideDeepeningByHero[group.hero];
+  return extra ? { ...group, entries: [...(group.entries || []), extra] } : group;
+});
 const itemByKey = new Map(DATA.items.map((item) => [item.key, item]));
 const setById = new Map((DATA.itemSets || []).map((itemSet) => [itemSet.id, itemSet]));
 const rawItemById = new Map((DATA.raw?.items || []).map((item) => [item.id, item]));
@@ -1908,7 +2206,7 @@ function guideEntryCard(entry) {
           ${(entry.points || []).map((point) => `<li>${esc(point)}</li>`).join("")}
         </ul>
       `}
-      <div class="guide-source-row">${guideSourceLinks(entry.sourceIds) || `<span class="muted">暂未找到合格的 3.32 玩家来源</span>`}</div>
+      <div class="guide-source-row">${guideSourceLinks(entry.sourceIds) || `<span class="muted">来源待补</span>`}</div>
     </article>
   `;
 }
@@ -1930,19 +2228,23 @@ function renderGuides() {
   const heroes = GUIDE_DATA.heroes.filter((group) =>
     includesQuery(guideSearchText(group), ["hero", "aliases", "role", "entries", "sources"])
   );
-  const guideCount = GUIDE_DATA.heroes.reduce((sum, group) => sum + (group.entries || []).length, 0)
-    + (GUIDE_DATA.general || []).length;
+  const heroGuideCount = GUIDE_DATA.heroes.reduce((sum, group) => sum + (group.entries || []).length, 0);
+  const guideCount = heroGuideCount + (GUIDE_DATA.general || []).length;
   const general = (GUIDE_DATA.general || []).filter((entry) =>
     includesQuery(entry, ["title", "summary", "points", "sourceIds"])
+  );
+  const visibleSources = GUIDE_DATA.sources.filter((source) =>
+    includesQuery(source, ["site", "type", "title", "note", "url"])
   );
   return `
     <div class="toolbar">
       <span class="pill">外部来源 ${GUIDE_DATA.sources.length}</span>
+      <span class="pill">英雄攻略 ${heroGuideCount}</span>
       <span class="pill">攻略摘要 ${guideCount}</span>
       <span class="pill">3.x 玩家社区/B站</span>
       <span class="pill">更新 ${esc(GUIDE_DATA.updatedAt)}</span>
     </div>
-    <div class="guide-policy">${esc(GUIDE_DATA.sourcePolicy)}</div>
+    <div class="guide-policy compact">英雄攻略优先展示；通用资料和来源索引收在底部。${esc(GUIDE_DATA.sourcePolicy)}</div>
     <div class="hero-jump-list guide-jump-list">
       ${heroes.map((group) => `
         <button class="hero-jump" data-guide-jump="${esc(textKey(group.hero))}">
@@ -1952,25 +2254,7 @@ function renderGuides() {
       `).join("")}
     </div>
     <section class="guide-section">
-      <h2>通用资料</h2>
-      <div class="guide-entry-grid">
-        ${general.map(guideEntryCard).join("") || empty("没有匹配的通用攻略")}
-      </div>
-    </section>
-    <section class="guide-section">
-      <h2>资料来源</h2>
-      <div class="guide-source-grid">
-        ${GUIDE_DATA.sources.map((source) => `
-          <a class="guide-source-card" href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">
-            <span class="pill">${esc(source.site)} · ${esc(source.type)}</span>
-            <strong>${esc(source.title)}</strong>
-            <p>${esc(source.note)}</p>
-          </a>
-        `).join("")}
-      </div>
-    </section>
-    <section class="guide-section">
-      <h2>按英雄分类</h2>
+      <h2>英雄攻略</h2>
       <div class="guide-hero-stack">
         ${heroes.map((group) => `
           <article class="guide-hero-card" id="guide-${esc(textKey(group.hero))}">
@@ -1989,6 +2273,23 @@ function renderGuides() {
             </div>
           </article>
         `).join("") || empty("没有匹配的英雄攻略")}
+      </div>
+    </section>
+    <section class="guide-section guide-support-section">
+      <h2>辅助资料</h2>
+      <div class="guide-entry-grid compact">
+        ${general.map(guideEntryCard).join("") || empty("没有匹配的辅助资料")}
+      </div>
+    </section>
+    <section class="guide-section guide-support-section">
+      <h2>来源索引</h2>
+      <div class="guide-source-compact">
+        ${visibleSources.map((source) => `
+          <a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">
+            <span>${esc(source.site)} · ${esc(source.type)}</span>
+            <strong>${esc(source.title)}</strong>
+          </a>
+        `).join("") || empty("没有匹配的来源")}
       </div>
     </section>
   `;

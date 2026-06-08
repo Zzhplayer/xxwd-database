@@ -529,6 +529,11 @@ h3 {
   line-height: 1.6;
 }
 
+.guide-policy.compact {
+  color: #3e5549;
+  font-size: 13px;
+}
+
 .guide-hero-stack {
   display: grid;
   gap: 16px;
@@ -554,6 +559,10 @@ h3 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
   gap: 12px;
+}
+
+.guide-entry-grid.compact {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .guide-entry-card {
@@ -633,6 +642,50 @@ h3 {
   font-weight: 600;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.guide-support-section {
+  opacity: 0.92;
+}
+
+.guide-source-compact {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 8px;
+}
+
+.guide-source-compact a {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.guide-source-compact a:hover {
+  border-color: var(--jade);
+  background: #f7fbf8;
+}
+
+.guide-source-compact span,
+.guide-source-compact strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.guide-source-compact span {
+  color: var(--jade-deep);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.guide-source-compact strong {
+  font-size: 13px;
 }
 
 .skill-grid {
